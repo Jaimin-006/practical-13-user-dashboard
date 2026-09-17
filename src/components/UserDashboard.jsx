@@ -13,43 +13,43 @@ function UserDashboard() {
   }
 
   return (
-    <div className="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md border border-gray-200">
-      <h2 className="text-xl font-bold text-indigo-700 mb-4">Enterprise Portal Control</h2>
+    <div className="p-6 max-w-md mx-auto bg-white rounded-lg shadow-sm border border-zinc-300">
+      <h2 className="text-xl font-bold text-zinc-900 mb-4 border-b border-zinc-200 pb-2">
+        Enterprise Portal Control
+      </h2>
       
       <div className="flex space-x-3 mb-6">
         <button
           onClick={toggleLogin}
-          className="bg-indigo-600 text-white px-4 py-2 rounded text-sm hover:bg-indigo-700"
+          className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-semibold transition"
         >
           {isLoggedIn ? 'Log Out' : 'Log In'}
         </button>
         {isLoggedIn && (
           <button
             onClick={toggleAdmin}
-            className="bg-gray-700 text-white px-4 py-2 rounded text-sm hover:bg-gray-800"
+            className="bg-zinc-700 hover:bg-zinc-800 text-white px-4 py-2 rounded-md text-sm font-semibold transition"
           >
             {isAdmin ? 'Switch to Staff' : 'Switch to Admin'}
           </button>
         )}
       </div>
 
-      {/* Conditional Rendering using Ternary Operator */}
       {isLoggedIn ? (
-        <div className="p-4 bg-green-50 border border-green-300 rounded-lg">
-          <h3 className="font-bold text-green-800 text-lg">Welcome Back, Employee!</h3>
-          <p className="text-sm text-green-700">You are securely connected to internal server.</p>
+        <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-md">
+          <h3 className="font-bold text-emerald-900 text-base">Welcome Back, Employee!</h3>
+          <p className="text-xs text-emerald-700 mt-1">You are securely connected to internal server.</p>
           
-          {/* Logical && operator for admin privilege */}
           {isAdmin && (
-            <div className="mt-3 p-2 bg-yellow-100 border border-yellow-400 text-yellow-800 rounded text-xs font-bold">
+            <div className="mt-3 p-2.5 bg-amber-50 border border-amber-300 text-amber-900 rounded text-xs font-semibold">
               ⚡ Admin Privileges Active: Accessing System Diagnostics
             </div>
           )}
         </div>
       ) : (
-        <div className="p-4 bg-gray-100 border border-gray-300 rounded-lg text-center">
-          <h3 className="font-bold text-gray-700 text-lg">Please Log In</h3>
-          <p className="text-sm text-gray-500">Access restricted to authorized personnel only.</p>
+        <div className="p-4 bg-zinc-50 border border-zinc-200 rounded-md text-center">
+          <h3 className="font-bold text-zinc-800 text-base">Please Log In</h3>
+          <p className="text-xs text-zinc-500 mt-1">Access restricted to authorized personnel only.</p>
         </div>
       )}
     </div>
