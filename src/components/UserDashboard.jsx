@@ -14,10 +14,13 @@ function UserDashboard() {
 
   return (
     <div className="p-6 max-w-md mx-auto bg-slate-900 rounded-xl shadow-xl border border-slate-800">
-      <div className="border-b border-slate-800 pb-3 mb-5">
+      <div className="border-b border-slate-800 pb-3 mb-5 flex justify-between items-center">
         <h2 className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
           Enterprise Portal Control
         </h2>
+        <span className="text-[10px] uppercase font-mono px-2 py-0.5 bg-slate-800 text-slate-400 rounded border border-slate-700">
+          v2.4 Live
+        </span>
       </div>
       
       <div className="flex space-x-3 mb-6">
@@ -39,7 +42,10 @@ function UserDashboard() {
 
       {isLoggedIn ? (
         <div className="p-4 bg-emerald-950/50 border border-emerald-800/80 rounded-lg space-y-2">
-          <h3 className="font-bold text-emerald-400 text-base">Welcome Back, Employee!</h3>
+          <div className="flex justify-between items-center">
+            <h3 className="font-bold text-emerald-400 text-base">Welcome Back, Employee!</h3>
+            <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          </div>
           <p className="text-xs text-emerald-300/80">You are securely connected to internal server.</p>
           
           {isAdmin && (
